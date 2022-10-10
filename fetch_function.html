@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="button" value="fetch" onclick="
+            // function callbackme(){
+            //     console.log('response end');
+            // }
+            // fetch('event').then(callbackme); //fetch야 응답이 끝나면 callbackme라는 함수를 실행시켜라
+
+            // callbackme = function(){
+            //     console.log('response end');
+            // } 위랑 같은 말임 그러므로 callbackme 자리에 위내용을 붙여도 된다.
+
+            //그러면 이렇게 된다.
+            fetch('event').then(function(){
+                 console.log('response end');
+            });
+
+            //response 객체 => 성공하면 200 실패하면 404
+            // fetch('event').then(function(response){
+            //      console.log(response);
+            // });
+
+            console.log(1);
+            console.log(2); //여기까지 코드가 실행되고 웹브라우저가 응답받는게 끝난 다음에 callbackme 함수가 실행된다.
+        ">
+
+<article>
+
+</article>
+    </body>
+</html>

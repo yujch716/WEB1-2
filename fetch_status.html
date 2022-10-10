@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input type="button" value="fetch" onclick="
+            //response 객체 => 응답 정보 다 출력
+            // fetch('event').then(function(response){
+            //      console.log(response);
+            // }); 
+
+            //응답정보중 status만 출력 => 성공하면 200 실패하면 404
+            // fetch('event').then(function(response){
+            //      console.log(response.status);
+            // });
+
+            //응용
+            // fetch('java').then(function(response){
+            //      console.log(response.status);
+            //      if(response.status == '404'){
+            //         alert('Not found')
+            //      }
+            // }); java라는 없는 파일 출력
+
+            fetch('event').then(function(response){
+                 console.log(response.status);
+                 if(response.status == '200'){
+                    alert('Found It!')
+                 }
+            });
+
+
+
+            console.log(1);
+            console.log(2); //여기까지 코드가 실행되고 웹브라우저가 응답받는게 끝난 다음에 callbackme 함수가 실행된다.
+        ">
+
+<article>
+
+</article>
+    </body>
+</html>
