@@ -1,0 +1,7 @@
+<a href="http://www.w3.org/TR/html4/" target="_blank" title="html5 specification">Hypertext Markup Language (HTML)</a>
+      is the standard markup Language for <strong>creating <u>web</u> pages</strong> and web applications. Web browsers receive HTML documents
+      from a web server or from local storage and render them into multimedia web pages. HTML describes the structure of a web page semantically
+      and originally included cues for the appearance of the document.</br></br> <img src="coding.jpg" width="50%"> </br></br>
+      HTML elements are the building blocks of HTML pages. It provides a mean to create stuctured documents
+      by denoting structural semantics for text such as headings,
+      paragraphs, lists, links, quates and other items. HTML elements are delineated by tags, written using angle brakets.
