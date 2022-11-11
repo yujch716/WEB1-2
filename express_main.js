@@ -1,15 +1,52 @@
-// const { response } = require('express');
-const express = require('express')
-// const { fstat } = require('fs')
-const app = express()
-// var fs = require('fs');
-// var qs = required('querystring');
-// var sanitizeHtml = required('sanitize-html');
-// var template = reuqire('./lib/template.js');
+var express = require('express')
+var app = express()
+var fs = require('fs');
+var template = require('./lib/template.js');
 const port = 3003
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  fs.readdir('./data', function(error, filelist){
+      var title = 'Welcome';
+      var description = 'Hello, Node.js';
+      var list = template.list(filelist);
+      var html = template.HTML(title, list,
+        `<h2>${title}</h2>${description}`,
+        `<a href="/create">create</a>`
+        );
+        res.send(html);
+  });
+})
+
+app.get('/create', (req, res) => {
+  fs.readdir('./data', function(error, filelist){
+      var title = 'WEB - create';
+      var list = template.list(filelist);
+      var html = template.HTML(title, list,
+        `
+        <form action="/create_process" method="post">
+          <p>
+            <input type="text" name="title" placeholder="title">
+          </p>
+          <p>
+            <textarea name="description" placeholder="description"></textarea>
+          </p>
+          <p>
+            <input type="submit">
+          </p>
+        </form>
+        `
+        ,'');
+        res.send(html);
+  });
+})
+
+app.post('/create_process', (req, res) => {
+  var body = '';
+  req.on('data',)
+})
+
+app.get('/page/:pageId/:chapterId', (req, res) => {
+  res.send(req.params)
 })
 
 app.listen(port, () => {
